@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
+import {auth, app} from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    
+        const Signup = (e) => {
+            e.preventDefault();
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // Signed in 
+              navigate("/tracker");
+              //const user = userCredential.user;
+              // ...
+            })
+            .catch((error) => {
+                navigate("/signup");
+            //   const errorCode = error.code;
+            //   const errorMessage = error.message;
+              // ..
+            });
+
+
+    }
+
+
+
+
   return (
     <>
       <Navigation />
       <div className="bg-black min-h-screen flex flex-col justify-center items-center -mt-16">
         <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
           <h2 className="text-2xl font-bold text-center text-black">Sign Up</h2>
-          <form>
+          <form onSubmit={Signup}>
             <div className="space-y-4">
-              <div>
+              {/* <div>
                 <label
                   className="block text-sm font-medium text-gray-700"
                   htmlFor="name"
@@ -25,7 +56,7 @@ const Signup = () => {
                   placeholder="Your full name"
                   required
                 />
-              </div>
+              </div> */}
               <div>
                 <label
                   className="block text-sm font-medium text-gray-700"
@@ -40,6 +71,8 @@ const Signup = () => {
                   name="email"
                   placeholder="Your email address"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -56,9 +89,11 @@ const Signup = () => {
                   name="password"
                   placeholder="Your password"
                   required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div>
+              {/* <div>
                 <label
                   className="block text-sm font-medium text-gray-700"
                   htmlFor="confirm-password"
@@ -72,11 +107,13 @@ const Signup = () => {
                   name="confirm-password"
                   placeholder="Confirm your password"
                   required
+                  value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
-              </div>
+              </div> */}
               <button
                 className="w-full bg-gray-800 text-white font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
-                type="submit"
+                type="submit" value="Sign Up"
               >
                 Sign Up
               </button>

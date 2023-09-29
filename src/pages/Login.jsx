@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../components/Navigation";
+import {auth, app} from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  return (
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+        const signIn = (e) => {
+            e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          navigate("/tracker");
+        })
+        .catch((error) => {
+         navigate("/login");
+        });
+
+
+    }
+
+    return (
     <>
       <Navigation />
       <div className="bg-black min-h-screen flex flex-col justify-center items-center -mt-16">
         <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
           <h2 className="text-2xl font-bold text-center text-black">Sign In</h2>
-          <form>
+          <form onSubmit={signIn}>
             <div className="space-y-4">
               <div>
                 <label
@@ -23,8 +45,11 @@ const Login = () => {
                   id="email"
                   name="email"
                   placeholder="Your email address"
+                  value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   required
-                />
+                >
+                </input>
               </div>
               <div>
                 <label
@@ -40,7 +65,10 @@ const Login = () => {
                   name="password"
                   placeholder="Your password"
                   required
-                />
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                > 
+                </input>
               </div>
               <div className="flex items-center justify-between">
                 <label className="flex items-center space-x-2">
@@ -59,6 +87,7 @@ const Login = () => {
               <button
                 className="w-full bg-gray-800 text-white font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
                 type="submit"
+                value="Sign In"
               >
                 Sign In
               </button>
