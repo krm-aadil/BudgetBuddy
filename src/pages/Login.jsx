@@ -1,28 +1,41 @@
 import React, { useState } from "react";
 import Navigation from "../components/Navigation";
-import {auth, app} from "../firebase";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        // Signed in successfully
+        showWelcomeNotification();
+        navigate("/tracker");
+      })
+      .catch((error) => {
+        console.error("Error signing in:", error);
+        navigate("/login");
+      });
+  };
 
-        const signIn = (e) => {
-            e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in 
-          navigate("/tracker");
-        })
-        .catch((error) => {
-         navigate("/login");
-        });
-
-
+  const showWelcomeNotification = () => {
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+      navigator.serviceWorker.ready.then((registration) => {
+        const title = "Welcome to Your App";
+        const options = {
+          body: "You are now logged in.",
+          icon: ".images/logo.png", // Replace with your icon path
+        };
+        
+        registration.showNotification(title, options);
+      });
     }
+  };
 
     return (
     <>
