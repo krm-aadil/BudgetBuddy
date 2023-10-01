@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <nav className="bg-black text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">Logo</div>
+        <a href="/"><div className="text-2xl px-2 font-semibold">Budget-Buddy</div></a>
         <ul className="flex space-x-4">
           <li className="hidden md:block">
             <a
@@ -28,7 +28,7 @@ const Navigation = () => {
               About
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="/login"
               className="hover:text-gray-300 transition duration-300"
@@ -43,7 +43,7 @@ const Navigation = () => {
             >
               Signup
             </a>
-          </li>
+          </li> */}
         </ul>
         <div className="md:hidden">
           <button

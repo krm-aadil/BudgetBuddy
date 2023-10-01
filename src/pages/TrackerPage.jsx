@@ -1,16 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
+import AddBudgetModal from "../components/AddBudgetModal";
+import AddExpenseModal from "../components/AddExpenseModal";
+import ViewExpensesModal from "../components/ViewExpensesModal";
+import BudgetCard from "../components/BudgetCard";
+import UncategorizedBudgetCard from "../components/UncategorizedBudgetCard";
+import TotalBudgetCard from "../components/TotalBudgetCard";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "../contexts/BudgetsContext";
+import { Button, Stack } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Navigation from "../components/Navigation";
 
-import { Button } from "@material-tailwind/react";
 
+const Tracker = () => {
+  const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
+  const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
+  const [viewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState();
+  const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
+  const { budgets, getBudgetExpenses } = useBudgets();
 
-const Tracker = () => {  
-    return (
-        <>
-       
-       
-    <Button>Tracker start</Button>
-        </>
-    );
-    };
+  function openAddExpenseModal(budgetId) {
+    setShowAddExpenseModal(true);
+    setAddExpenseModalBudgetId(budgetId);
+  }
+
+  return (
+    <>
+    <Navigation />
+      <body className="bg-white">
+      <Container className="my-4">
+        <Stack direction="horizontal" gap="2" className="mb-4  ">
+          <h1 className="me-auto text-2xl font-semibold px-1 text-white">Budgets</h1>
+          <Button
+            variant="primary"
+            onClick={() => setShowAddBudgetModal(true)}
+            className="px-5 py-2 rounded-md border border-blue-500
+             text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2
+              focus:ring-blue-500 "
+          >
+            Add Budget
+          </Button>
+          <Button
+            variant="outline-primary"
+            onClick={() => openAddExpenseModal()}
+            className="px-4 py-2 rounded-md border border-blue-500 text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2" // Added ml-2 for left margin
+          >
+            Add Expense
+          </Button>
+
+        </Stack>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {budgets.map((budget) => {
+            const amount = getBudgetExpenses(budget.id).reduce(
+              (total, expense) => total + expense.amount,
+              0
+            );
+            return (
+              <BudgetCard
+                key={budget.id}
+                name={budget.name}
+                amount={amount}
+                max={budget.max}
+                onAddExpenseClick={() => openAddExpenseModal(budget.id)}
+                onViewExpensesClick={() =>
+                  setViewExpensesModalBudgetId(budget.id)
+                }
+              />
+            );
+          })}
+          <UncategorizedBudgetCard
+            onAddExpenseClick={() => openAddExpenseModal(UNCATEGORIZED_BUDGET_ID)}
+            onViewExpensesClick={() =>
+              setViewExpensesModalBudgetId(UNCATEGORIZED_BUDGET_ID)
+            }
+          />
+          <TotalBudgetCard />
+        </div>
+      </Container>
+      <AddBudgetModal
+        show={showAddBudgetModal}
+        handleClose={() => setShowAddBudgetModal(false)}
+      />
+      <AddExpenseModal
+        show={showAddExpenseModal}
+        defaultBudgetId={addExpenseModalBudgetId}
+        handleClose={() => setShowAddExpenseModal(false)}
+      />
+      <ViewExpensesModal
+        budgetId={viewExpensesModalBudgetId}
+        handleClose={() => setViewExpensesModalBudgetId()}
+      />
+      </body>
+    </>
+  );
+};
 
 export default Tracker;

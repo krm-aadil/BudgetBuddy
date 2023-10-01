@@ -29,7 +29,7 @@ const Login = () => {
         const title = "Welcome to Your App";
         const options = {
           body: "You are now logged in.",
-          icon: ".images/logo.png", // Replace with your icon path
+          icon: "https://media.istockphoto.com/id/1357349308/vector/money-wallet-with-green-paper-dollars-and-gold-coins-realistic-3d-design-in-cartoon-business.jpg?s=170667a&w=0&k=20&c=tDR6Lqzjuw4vbJ8BgVPmgP2oNg1stQQUVZ0WQ0GPmpo=", // Replace with your icon path
         };
         
         registration.showNotification(title, options);
