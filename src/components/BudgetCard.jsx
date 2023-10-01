@@ -23,6 +23,8 @@ export default function BudgetCard({
     classNames.push("bg-gray-200");
   }
 
+  const progressBarWidth = max ? Math.min((amount / max) * 100, 100) : 0; // Limit the width to 100%
+
   return (
     <div className={`rounded-lg shadow-md p-4 ${classNames.join(" ")}`}>
       <div className="mb-3">
@@ -41,7 +43,7 @@ export default function BudgetCard({
           <div className="bg-gray-300 rounded-full h-4">
             <div
               className={`${progressBarVariant} rounded-full h-4`}
-              style={{ width: `${(amount / max) * 100}%` }}
+              style={{ width: `${progressBarWidth}%` }}
             ></div>
           </div>
         </div>

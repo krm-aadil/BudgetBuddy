@@ -29,7 +29,7 @@ const Home = () => {
         <body className="bg-gray-100">
 
 
-<header className="bg-gradient-to-r from-gray-100 to-gray-400 shadow-md">
+<header className="bg-white  shadow-md">
     <div className="flex justify-between items-center py-2 px-5 border-b-2 border-gray-200">
         <div className="flex items-center">
            
@@ -40,7 +40,7 @@ const Home = () => {
 
         
         <div className="flex items-center space-x-2 ">
-            <a href="/login" className="px-2 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-lg text-sm">Login</a>
+            <a href="/login" className="px-2 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white  font-semibold rounded-lg text-sm">Login</a>
             <a href="/signup" className="px-2 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-lg text-sm">Register</a>
         </div>
     </div>
@@ -48,7 +48,7 @@ const Home = () => {
 
 
 <div className="bg-white">
-    <div className="flex justify-between items-center py-28 px-5 bg-gradient-to-r from-gray-100 to-gray-400 ">
+    <div className="flex justify-between items-center py-28 px-5 bg-gradient-to-r from-blue-100 to-blue-400 ">
         <div className="w-1/2">
             <h2 className="text-5xl font-semibold text-gray-800">Budget Buddy</h2>
             <h3 className="text-xl font-semibold text-gray-600 mt-4">Your Pocket Budget Tracker!</h3>

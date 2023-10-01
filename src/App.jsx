@@ -6,7 +6,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import About from './pages/About'
 import Tracker from './pages/TrackerPage'
-import ExpenseHistory from './pages/ExpenseHistory'
+import HowTo from './pages/HowTo'
+
 
 function App() {
  
@@ -22,7 +23,7 @@ function App() {
   <Route path="/signup" element={<Signup />} />
   <Route path='/About' element={<About />} />
   <Route path='/tracker' element={<Tracker />} />
-  <Route path='/expensehistory' element={<ExpenseHistory />} />
+  <Route path='/howto' element={<HowTo />} />
 </Routes>
 
     </>
