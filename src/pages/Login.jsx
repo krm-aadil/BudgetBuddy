@@ -26,9 +26,9 @@ const Login = () => {
   const showWelcomeNotification = () => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       navigator.serviceWorker.ready.then((registration) => {
-        const title = "Welcome to Your App";
+        const title = "Welcome to Budget Buddy";
         const options = {
-          body: "You are now logged in.",
+          body: "You are successfully signed up with budget buddy.",
           icon: "https://media.istockphoto.com/id/1357349308/vector/money-wallet-with-green-paper-dollars-and-gold-coins-realistic-3d-design-in-cartoon-business.jpg?s=170667a&w=0&k=20&c=tDR6Lqzjuw4vbJ8BgVPmgP2oNg1stQQUVZ0WQ0GPmpo=", // Replace with your icon path
         };
         

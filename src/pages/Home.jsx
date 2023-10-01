@@ -1,9 +1,28 @@
 import React from "react";
 import Navigation from "../components/Navigation";
+import { useState } from "react";
+
+
 
 
 
 const Home = () => {  
+
+  const [shareURL] = useState("https://accidental-wound.surge.sh/");
+  const shareBudgetBuddy = async () => {
+    try {
+      await navigator.share({
+        title: "Budget Buddy",
+        text: "Check out Budget Buddy - Your Pocket Budget Tracker!",
+        url: shareURL,
+      });
+    } catch (error) {
+      console.error("Error sharing:", error);
+    }
+  };
+
+
+
     return (
         <>
         <Navigation />
@@ -52,12 +71,13 @@ const Home = () => {
 
 
 <div className="bg-gradient-to-r from-gray-600 to-gray-800 p-10 rounded-lg mt-10">
-  <h2 className="text-white text-3xl text-center">Create an Account Now </h2>
-<p className="text-white mt-2 text-center">&quot;Join the financial revolution. Create your Budget Buddy account today and take the first step towards financial empowerment.&quot;</p>
+  <h2 className="text-white text-3xl text-center">Share Budget-Buddy With Others</h2>
+  <p className="text-white mt-2 text-center">&quot;Join the financial revolution. Create your Budget Buddy account today and take the first step towards financial empowerment.&quot;</p>
   <div className="flex justify-center">
-    <button className="mt-4 bg-white text-gray-800 rounded-lg px-4 py-2 font-semibold">Sign Up</button>
+    <button onClick={shareBudgetBuddy} className="mt-4 bg-white text-gray-800 rounded-lg px-4 py-2 font-semibold">Share</button>
   </div>
 </div>
+
 
 {/* 
 <div className="bg-white p-10 mt-10">

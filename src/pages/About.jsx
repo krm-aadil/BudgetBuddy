@@ -8,7 +8,7 @@ const About = () => {
         <div className="container mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
       <div className="max-h-96 md:h-screen">
-        <img className="w-screen h-screen object-cover object-top" 
+        <img className="w-screen h-screen object-contain object-top" 
         src="https://static.vecteezy.com/system/resources/previews/026/419/546/original/3d-icon-of-a-money-growth-finance-illustration-png.png" alt="">
         </img>
       </div>
