@@ -40,14 +40,14 @@ const Login = () => {
     return (
     <>
       <Navigation />
-      <div className="bg-black min-h-screen flex flex-col justify-center items-center -mt-16">
-        <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-black">Sign In</h2>
+      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16">
+        <div className="bg-black shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
+          <h2 className="text-2xl font-bold text-center text-white">Sign In</h2>
           <form onSubmit={signIn}>
             <div className="space-y-4">
               <div>
                 <label
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-white"
                   htmlFor="email"
                 >
                   Email
@@ -66,7 +66,7 @@ const Login = () => {
               </div>
               <div>
                 <label
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-white"
                   htmlFor="password"
                 >
                   Password
@@ -91,14 +91,14 @@ const Login = () => {
                     id="remember-me"
                     name="remember-me"
                   />
-                  <span className="text-sm text-gray-700">Remember me</span>
+                  <span className="text-sm text-white">Remember me</span>
                 </label>
-                <a href="#" className="text-sm text-gray-700 hover:underline">
+                <a href="#" className="text-sm text-white hover:underline">
                   Forgot password?
                 </a>
               </div>
               <button
-                className="w-full bg-gray-800 text-white font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
+                className="w-full bg-white text-black font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
                 type="submit"
                 value="Sign In"
               >

@@ -48,7 +48,7 @@ const Navigation = () => {
         <div className="md:hidden">
           <button
             id="menu-toggle"
-            className="text-3xl text-white focus:outline-none"
+            className="text-3xl text-white focus:outline-none px-1"
             onClick={toggleMobileMenu}
           >
             ☰
@@ -59,7 +59,7 @@ const Navigation = () => {
         id="mobile-menu"
         className={`${
           isMobileMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-16 right-0 mt-2 bg-black w-48 p-2 space-y-2`}
+        } md:hidden absolute top-16 right-0.5 mt-2 bg-black w-48 p-2 space-y-2 rounded-xl shadow-xl`}
       >
         <a
           href="/"

@@ -10,57 +10,56 @@ const Home = () => {
         <body className="bg-gray-100">
 
 
-<header className="bg-white shadow-md">
+<header className="bg-gradient-to-r from-gray-100 to-gray-400 shadow-md">
     <div className="flex justify-between items-center py-2 px-5 border-b-2 border-gray-200">
         <div className="flex items-center">
            
-            <img src="https://www.emprenderconactitud.com/img/POC%20WCS%20(1).png" alt="Logo de la empresa" className="w-28 h-12 ml-6">
-            </img>
+            {/* <img src="https://www.emprenderconactitud.com/img/POC%20WCS%20(1).png" alt="Logo de la empresa" className="w-28 h-12 ml-6">
+            </img> */}
+            <h3 className="font-semibold font black">Get Started now !!!</h3>
         </div>
 
         
-        <div className="flex items-center space-x-2">
-            <a href="#" className="px-2 py-2 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white font-semibold rounded-lg text-sm">Registro</a>
-            <a href="#" className="px-2 py-2 bg-gradient-to-r from-cyan-400 to-cyan-600 text-white font-semibold rounded-lg text-sm">Contáctame</a>
+        <div className="flex items-center space-x-2 ">
+            <a href="/login" className="px-2 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-lg text-sm">Login</a>
+            <a href="/signup" className="px-2 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white font-semibold rounded-lg text-sm">Register</a>
         </div>
     </div>
 </header>
 
 
 <div className="bg-white">
-    <div className="flex justify-between items-center py-28 px-5">
+    <div className="flex justify-between items-center py-28 px-5 bg-gradient-to-r from-gray-100 to-gray-400 ">
         <div className="w-1/2">
-            <h2 className="text-5xl font-semibold text-gray-800">Fideliza Más</h2>
-            <h3 className="text-xl font-semibold text-gray-600 mt-4">¡Únete a nuestro programa de lealtad y obtén increíbles recompensas!</h3>
-            <p className="text-gray-600 mt-4">Nuestro programa de fidelización está diseñado para recompensar a nuestros clientes más fieles. Obtén puntos con cada compra y canjéalos por descuentos exclusivos, regalos especiales y experiencias únicas.</p>
+            <h2 className="text-5xl font-semibold text-gray-800">Budget Buddy</h2>
+            <h3 className="text-xl font-semibold text-gray-600 mt-4">Your Pocket Budget Tracker!</h3>
+            <p className="text-gray-600 mt-4">&ldquo;Take control of your finances with Budget Buddy, your daily budget tracking PWA, powered by React, Tailwind, Vite, and Firebase.&rdquo;</p>
         </div>
         <div className="w-1/2">
-            <img src="https://www.emprenderconactitud.com/img/fidelizamas.png" alt="Imagen relacionada con el programa de fidelización" className="w-full h-auto"> 
+            <img src="https://static.vecteezy.com/system/resources/previews/026/419/542/original/3d-icon-of-a-money-finance-illustration-png.png" alt="Imagen relacionada con el programa de fidelización" className="w-full h-auto"> 
             </img>
         </div>
     </div>
 </div>
 
-<div className="bg-white grid grid-cols-4 gap-10 p-10 mt-10">
 
+
+
+<div className="bg-gradient-to-r from-gray-800 to-gray-600  p-10 mt-10">
+  <h2 className="text-center text-3xl font-bold text-white">Our Misson</h2>
+<p className="mt-4 text-center text-gray-100">&ldquo;Our mission at Budget Buddy is to empower individuals with the tools they need to achieve financial wellness and success.&rdquo;</p>
 </div>
 
 
-<div className="bg-white p-10 mt-10">
-  <h2 className="text-center text-3xl">Nuestra Misión</h2>
-  <p className="mt-4">En FidelizaMás, nuestra misión es transformar la fidelización, conectando a empresas y clientes a través de emocionantes programas de recompensas basados en tokens...</p>
-</div>
-
-
-<div className="bg-gradient-to-r from-cyan-400 to-cyan-600 p-10 rounded-lg mt-10">
-  <h2 className="text-white text-3xl text-center">Únete a FidelizaMás</h2>
-  <p className="text-white mt-2 text-center">Descubre cómo podemos transformar la fidelización en una ventaja competitiva para tu empresa.</p>
+<div className="bg-gradient-to-r from-gray-600 to-gray-800 p-10 rounded-lg mt-10">
+  <h2 className="text-white text-3xl text-center">Create an Account Now </h2>
+<p className="text-white mt-2 text-center">&quot;Join the financial revolution. Create your Budget Buddy account today and take the first step towards financial empowerment.&quot;</p>
   <div className="flex justify-center">
-    <button className="mt-4 bg-white text-cyan-600 rounded-lg px-4 py-2">Saber más</button>
+    <button className="mt-4 bg-white text-gray-800 rounded-lg px-4 py-2 font-semibold">Sign Up</button>
   </div>
 </div>
 
-
+{/* 
 <div className="bg-white p-10 mt-10">
   <h2 className="text-lg font-bold">Lo que dicen nuestros clientes</h2>
 
@@ -70,11 +69,11 @@ const Home = () => {
 <div className="bg-white p-10 mt-10">
   <h2 className="text-lg font-bold">Con quienes trabajamos</h2>
 
-</div>
+</div> */}
 
 
-<footer className="bg-gray-800 text-white p-4 mt-10">
-  <p>Derechos reservados © FidelizaMás</p>
+<footer className="bg-black text-white p-4 mt-10">
+  <p>All Rights reserved ©aadil</p>
 </footer>
 
 </body>

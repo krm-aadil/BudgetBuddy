@@ -36,9 +36,9 @@ const Signup = () => {
   return (
     <>
       <Navigation />
-      <div className="bg-black min-h-screen flex flex-col justify-center items-center -mt-16">
-        <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-black">Sign Up</h2>
+      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16">
+        <div className="bg-black shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
+          <h2 className="text-2xl font-bold text-center text-white">Sign Up</h2>
           <form onSubmit={Signup}>
             <div className="space-y-4">
               {/* <div>
@@ -59,7 +59,7 @@ const Signup = () => {
               </div> */}
               <div>
                 <label
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-white"
                   htmlFor="email"
                 >
                   Email
@@ -77,7 +77,7 @@ const Signup = () => {
               </div>
               <div>
                 <label
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-white"
                   htmlFor="password"
                 >
                   Password
@@ -112,7 +112,7 @@ const Signup = () => {
                 />
               </div> */}
               <button
-                className="w-full bg-gray-800 text-white font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
+                className="w-full bg-white text-bla font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
                 type="submit" value="Sign Up"
               >
                 Sign Up
