@@ -18,10 +18,10 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
   }
 
   return (
-    <div className={`fixed inset-0 ${show ? "" : "hidden"} overflow-y-auto`}>
-      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center">
+    <div className={`fixed inset-0 ${show ? "" : "hidden"} overflow-y-auto  `}>
+      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center ">
         <div className="fixed inset-0 transition-opacity">
-          <div className="absolute inset-0 bg-white opacity-75"></div>
+          <div className="absolute inset-0 bg-white opacity-50"></div>
         </div>
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
         
@@ -29,7 +29,7 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
         
           <button
             onClick={handleClose}
-            className="absolute top-0 right-0 p-2 m-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300"
+            className="absolute top-0 right-0 p-2 m-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-blue-300"
           >
             {/* Close Icon (You can replace this with your own close icon) */}
             <svg
@@ -44,8 +44,8 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
             </svg>
           </button>
           <form onSubmit={handleSubmit}>
-            <div>
-              <div className="text-center sm:mt-5">
+            <div className="">
+              <div className="text-center sm:mt-5 ">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">New Expense</h3>
               </div>
               <div className="mt-5">
@@ -72,12 +72,12 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="budgetId" className="block text-sm font-medium text-gray-700">Budget</label>
+                  <label htmlFor="budgetId" className="block text-sm font-medium text-blue-700">Budget</label>
                   <select
                     defaultValue={defaultBudgetId}
                     ref={budgetIdRef}
                     id="budgetId"
-                    className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring focus:ring-opacity-50 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 p-2 block w-full rounded-md border-blue-300 shadow-sm focus:ring focus:ring-opacity-50 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option value={UNCATEGORIZED_BUDGET_ID}>Uncategorized</option>
                     {budgets.map(budget => (
@@ -92,7 +92,7 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
             <div className="mt-5 sm:mt-6">
               <button
                 type="submit"
-                className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gradient-to-b from-blue-200 to-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
               >
                 Add
               </button>

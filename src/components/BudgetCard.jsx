@@ -52,13 +52,13 @@ export default function BudgetCard({
         <div className="flex justify-between">
           <button
             onClick={onAddExpenseClick}
-            className="px-4 py-2 rounded-md border border-blue-500 text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 rounded-md border bg-gradient-to-b from-blue-400 to-blue-800 border-blue-500 text-white hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Add Expense
           </button>
           <button
             onClick={onViewExpensesClick}
-            className="px-4 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-4 py-2 rounded-xl  border-2 border-blue-600 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             View Expenses
           </button>

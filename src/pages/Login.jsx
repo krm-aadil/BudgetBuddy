@@ -29,7 +29,7 @@ const Login = () => {
         const title = "Welcome to Budget Buddy";
         const options = {
           body: "You are successfully signed up with budget buddy.",
-          icon: "https://media.istockphoto.com/id/1357349308/vector/money-wallet-with-green-paper-dollars-and-gold-coins-realistic-3d-design-in-cartoon-business.jpg?s=170667a&w=0&k=20&c=tDR6Lqzjuw4vbJ8BgVPmgP2oNg1stQQUVZ0WQ0GPmpo=", // Replace with your icon path
+          icon: "https://img.freepik.com/premium-psd/cute-dog-3d-illustration_438350-83.jpg", // Replace with your icon path
         };
         
         registration.showNotification(title, options);

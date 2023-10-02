@@ -42,20 +42,12 @@ const Tracker = () => {
   return (
     <>
     <Navigation />
-    <Button
-  variant="outline-primary"
-  onClick={toggleSpeechSynthesis}
-  className={`px-4 py-2 rounded-md border ${
-    speechSynthesisActive ? "border-red-500 text-red-500" : "border-blue-500 text-blue-500"
-  } hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 mr-2 mb-2 absolute bottom-0 right-0`}
->
-  {speechSynthesisActive ? <FaVolumeUp size={20} /> : <FaVolumeMute size={20} />}
-</Button>
+    
 
-      <body className="bg-white">
+      <body className="bg-gradient-to-t from-white to-white -mt-4">
 
         
-      <Container className="my-4">
+      <Container className="my-4 ">
         <Stack direction="horizontal" gap="2" className="mb-2   ">
           
           {/* <h1 className="me-auto text-2xl font-semibold px-2 text-Black">Budgets</h1> */}
@@ -63,16 +55,17 @@ const Tracker = () => {
           <Button
             variant="primary"
             onClick={() => setShowAddBudgetModal(true)}
-            className="px-5 py-2 rounded-md border border-blue-500
-             text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2
-              focus:ring-blue-500  ml-2 mt-1"
+            className="font-medium px-5 py-2 rounded-xl border border-gray-500
+             text-white hover:bg-blue-100 focus:outline-none focus:ring-2
+              focus:ring-blue-500  ml-2 mt-3 bg-gradient-to-b from-gray-400 to-gray-800 "
           >
             Add Budget
           </Button>
           <Button
             variant="outline-primary"
             onClick={() => openAddExpenseModal()}
-            className="px-4 py-2 rounded-md border border-blue-500 text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2" // Added ml-2 for left margin
+            className="px-4 py-2  rounded-2xl border border-gray-500 text-white hover:bg-blue-100
+             focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2 bg-gradient-to-b from-gray-400 to-gray-800" // Added ml-2 for left margin
           >
             Add Expense
           </Button>
@@ -121,6 +114,17 @@ const Tracker = () => {
         handleClose={() => setViewExpensesModalBudgetId()}
       />
       </body>
+
+  <Button
+    variant="outline-primary"
+    onClick={toggleSpeechSynthesis}
+    className={`px-4 py-2 rounded-md border ${
+      speechSynthesisActive ? "border-red-500 text-red-500" : "border-blue-500 text-blue-500"
+    } hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-500 mr-2 mb-2 absolute 
+    bottom-0 right-0 rounded-xl border-2`}>
+    {speechSynthesisActive ? <FaVolumeUp size={20} /> : <FaVolumeMute size={20} />}
+  </Button>
+
     </>
   );
 };
