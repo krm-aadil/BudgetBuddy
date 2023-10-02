@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const Home = () => {  
 
-  const [shareURL] = useState("https://accidental-wound.surge.sh/");
+  const [shareURL] = useState("https://github.com/krm-aadil/BudgetBuddy.git");
   const shareBudgetBuddy = async () => {
     try {
       await navigator.share({

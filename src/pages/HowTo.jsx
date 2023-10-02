@@ -17,7 +17,7 @@ const HowTo = () => {
                     </div>
                     <div className="rounded-xl max-h-96 md:h-screen bg-gradient-to-t from-blue-200 to-white">
                         <img className="w-screen h-screen object-contain object-top" 
-                        src="https://static.vecteezy.com/system/resources/previews/008/851/873/original/cute-dog-3d-illustration-png.png" alt="">
+                        src="https://github.com/krm-aadil/test/blob/main/3d-render-hand-dropping-golden-coins-white_107791-17736-removebg-preview.png?raw=true" alt="">
                         </img>
                     </div>
                 <div className="bg-white p-6 rounded-lg shadow-md">

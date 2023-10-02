@@ -101,11 +101,20 @@ const Navigation = () => {
   return (
     <Navbar className="mx-auto max-w-screen-xl py-0 px-4 lg:px-8 lg:py-2 bg-gradient-to-r from-blue-200 to-blue-400 border-cyan-400 mb-1 mt-0.5">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <img
-          src="https://raw.githubusercontent.com/krm-aadil/test/main/cute-dog-3d-illustration_438350-83-removebg-preview.png"
+      <a href="/">
+      {/* <img
+          src="https://static.vecteezy.com/system/resources/previews/009/383/173/original/dollar-coin-3d-illustration-png.png"
           alt="Logo"
           className="h-12 w-12 lg:h-16 lg:w-16"
-        />
+        /> */}
+          <Typography
+          as="a"
+          href="/"
+          className="mr-4 cursor-pointer py-1.5 font-bold text-gray-800 text-xl"
+        >
+          Budget-Buddy
+        </Typography>
+      </a>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block onClick={shareBudgetBuddy}">
           <span>SHARE NOW</span>

@@ -26,7 +26,7 @@ const Login = () => {
   const showWelcomeNotification = () => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       navigator.serviceWorker.ready.then((registration) => {
-        const title = "Welcome to Budget Buddy";
+        const title = "Welcome to Budget Buddy 🐶";
         const options = {
           body: "You are successfully signed up with budget buddy.",
           icon: "https://img.freepik.com/premium-psd/cute-dog-3d-illustration_438350-83.jpg", // Replace with your icon path
