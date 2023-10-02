@@ -36,9 +36,9 @@ const Signup = () => {
   return (
     <>
       <Navigation />
-      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16">
-        <div className="bg-black shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-white">Sign Up</h2>
+      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16 bg-gradient-to-t from-blue-200 to-white">
+        <div className="bg-blue-400 shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
+          <h2 className="text-2xl text-center font-bold text-gray-800">Sign Up</h2>
           <form onSubmit={Signup}>
             <div className="space-y-4">
               {/* <div>
@@ -59,7 +59,7 @@ const Signup = () => {
               </div> */}
               <div>
                 <label
-                  className="block text-sm font-medium text-white"
+                  className="block text-sm font-medium text-gray-800"
                   htmlFor="email"
                 >
                   Email
@@ -77,7 +77,7 @@ const Signup = () => {
               </div>
               <div>
                 <label
-                  className="block text-sm font-medium text-white"
+                  className="block text-sm font-medium text-gray-800"
                   htmlFor="password"
                 >
                   Password
@@ -111,12 +111,15 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
               </div> */}
-              <button
+            <div className="flex justify-center items-center">
+            <button
                 className="w-full bg-white text-bla font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
                 type="submit" value="Sign Up"
               >
                 Sign Up
               </button>
+
+              </div>
             </div>
           </form>
           <p className="text-sm text-gray-700 text-center">

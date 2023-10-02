@@ -40,20 +40,20 @@ const Login = () => {
     return (
     <>
       <Navigation />
-      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16">
-        <div className="bg-black shadow-lg rounded-lg p-8 max-w-md w- md:w-96 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-white">Sign In</h2>
+      <div className=" min-h-screen flex flex-col justify-center items-center -mt-16 bg-gradient-to-t from-blue-200 to-white">
+        <div className="bg-blue-400 shadow-lg rounded-2xl p-8 max-w-md w- md:w-96 space-y-4">
+          <h2 className="text-2xl text-center font-bold text-gray-800">Sign In</h2>
           <form onSubmit={signIn}>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
                 <label
-                  className="block text-sm font-medium text-white"
+                  className="block text-m font-medium text-gray-800"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+                  className=" w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring focus:ring-indigo-200 focus:outline-none"
                   type="email"
                   id="email"
                   name="email"
@@ -66,13 +66,13 @@ const Login = () => {
               </div>
               <div>
                 <label
-                  className="block text-sm font-medium text-white"
+                  className="block text-m font-medium text-gray-800"
                   htmlFor="password"
                 >
                   Password
                 </label>
                 <input
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring focus:ring-indigo-200 focus:outline-none"
                   type="password"
                   id="password"
                   name="password"
@@ -97,18 +97,21 @@ const Login = () => {
                   Forgot password?
                 </a>
               </div>
+              <div className="flex justify-center items-center">
               <button
-                className="w-full bg-white text-black font-semibold py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
+                className="w-1/2 bg-white text-black font-semibold py-2 rounded-full hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
                 type="submit"
                 value="Sign In"
               >
                 Sign In
               </button>
+              </div>
+        
             </div>
           </form>
           <p className="text-sm text-gray-700 text-center">
             Don't have an account?{" "}
-            <a href="/Signup" className="text-black font-medium hover:underline">
+            <a href="/Signup" className="text-black font-semibold hover:underline">
               Sign Up
             </a>
           </p>
