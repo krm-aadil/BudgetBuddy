@@ -2,6 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { signOut } from "firebase/auth";
+
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,4 +26,12 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
-export { app,auth };
+const logout = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error("Error logging out:", error);
+  }
+};
+
+export { app,auth,logout };
