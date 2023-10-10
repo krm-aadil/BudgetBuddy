@@ -26,13 +26,14 @@ export default function BudgetCard({
   const progressBarWidth = max ? Math.min((amount / max) * 100, 100) : 0; // Limit the width to 100%
 
   return (
-    <div className={`rounded-lg shadow-md p-4 ${classNames.join(" ")}`}>
+    <div className={`bg-gradient-to-r from-white to-blue-200 ml-1 mr-1 rounded-lg shadow-md 
+    border-2 border-blue-200 p-4 ${classNames.join(" ")}`}>
       <div className="mb-3">
-        <div className="font-medium text-lg mb-1">{name}</div>
+        <div className="text-gray-900 font-bold text-lg mb-1">{name}</div>
         <div className="flex items-center">
-          <div className="font-semibold">{currencyFormatter.format(amount)}</div>
+          <div className="text-gray-900 font-semibold">{currencyFormatter.format(amount)}</div>
           {max && (
-            <div className="text-gray-500 text-sm ml-1">
+            <div className="text-gray-600 text-sm ml-1">
               / {currencyFormatter.format(max)}
             </div>
           )}
@@ -52,13 +53,13 @@ export default function BudgetCard({
         <div className="flex justify-between">
           <button
             onClick={onAddExpenseClick}
-            className="px-4 py-2 rounded-md border bg-gradient-to-b from-blue-400 to-blue-800 border-blue-500 text-white hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 rounded-xl border bg-gradient-to-b from-gray-900 to-gray-800 border-gray-900 text-white hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Add Expense
           </button>
           <button
             onClick={onViewExpensesClick}
-            className="px-4 py-2 rounded-xl  border-2 border-blue-600 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-4 py-2 rounded-xl bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             View Expenses
           </button>

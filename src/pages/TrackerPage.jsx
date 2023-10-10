@@ -13,6 +13,7 @@ import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { logout } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import Tracker_Navigation from "../components/Tracker_Navigartion";
+import { Bounce } from "react-reveal";
 
 const Tracker = () => {
 
@@ -58,14 +59,14 @@ const Tracker = () => {
 
       {/* Create a container for the content you want to be read */}
       <div className="content-container">
-        <Container className="my-4 ">
+        <Container className="my-1 ">
           <Stack direction="horizontal" gap="2" className="mb-2   ">
             <Button
               variant="primary"
               onClick={() => setShowAddBudgetModal(true)}
               className="font-medium px-5 py-2 rounded-xl border border-gray-500
                text-white hover:bg-blue-100 focus:outline-none focus:ring-2
-                focus:ring-blue-500  ml-2 mt-3 bg-gradient-to-b from-gray-400 to-gray-800 "
+                focus:ring-blue-500  ml-2 mt-3 bg-gradient-to-r from-gray-900 to-gray-800 "
             >
               Add Budget
             </Button>
@@ -73,18 +74,24 @@ const Tracker = () => {
               variant="outline-primary"
               onClick={() => openAddExpenseModal()}
               className="px-4 py-2  rounded-2xl border border-gray-500 text-white hover:bg-blue-100
-               focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2 bg-gradient-to-b from-gray-400 to-gray-800" // Added ml-2 for left margin
+               focus:outline-none focus:ring-2 focus:ring-blue-500 ml-2 bg-gradient-to-r from-gray-900 to-gray-800" // Added ml-2 for left margin
             >
               Add Expense
             </Button>
+
           </Stack>
+
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Bounce left>
             {budgets.map((budget) => {
               const amount = getBudgetExpenses(budget.id).reduce(
                 (total, expense) => total + expense.amount,
                 0
               );
               return (
+
+                
                 <BudgetCard
                   key={budget.id}
                   name={budget.name}
@@ -95,6 +102,8 @@ const Tracker = () => {
                     setViewExpensesModalBudgetId(budget.id)
                   }
                 />
+
+
               );
             })}
             <UncategorizedBudgetCard
@@ -104,7 +113,9 @@ const Tracker = () => {
               }
             />
             <TotalBudgetCard />
+            </Bounce>
           </div>
+          
         </Container>
       </div>
 
@@ -126,7 +137,7 @@ const Tracker = () => {
         variant="outline-primary"
         onClick={toggleSpeechSynthesis}
         className={`px-4 py-2 rounded-md border ${
-          speechSynthesisActive ? "border-red-500 text-red-500" : "border-blue-500 text-blue-500"
+          speechSynthesisActive ? "border-blue-900 text-blue-900" : "border-gray-900 text-gray-900"
         } hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-500 mr-2 mb-2 absolute 
         bottom-0 right-0 rounded-xl border-2`}
       >

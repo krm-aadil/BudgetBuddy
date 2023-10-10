@@ -12,7 +12,7 @@ import { auth } from "../firebase";
 
 const Navigation = () => {
   const navigate = useNavigate();
-  const [shareURL] = useState("https://github.com/krm-aadil/BudgetBuddy.git");
+  const [shareURL] = useState("https://aadil-mad.surge.sh");
 
   const shareBudgetBuddy = async () => {
     try {
@@ -119,7 +119,7 @@ const Navigation = () => {
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl py-0 px-4 lg:px-8 lg:py-2 bg-gradient-to-r from-blue-200 to-blue-400 border-cyan-400 mb-1 mt-0.5">
+    <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-2 bg-gradient-to-r from-blue-200 to-blue-400 border-cyan-400 rounded-none ">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <a href="/">
           <Typography

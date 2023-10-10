@@ -1,14 +1,14 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import { useState } from "react";
-
-
-
+import Slide from 'react-reveal/Slide';
+import RubberBand from 'react-reveal/RubberBand';
+import Jello from 'react-reveal/Jello';
 
 
 const Home = () => {  
 
-  const [shareURL] = useState("https://github.com/krm-aadil/BudgetBuddy.git");
+  const [shareURL] = useState("https://aadil-mad.surge.sh");
   const shareBudgetBuddy = async () => {
     try {
       await navigator.share({
@@ -46,30 +46,39 @@ const Home = () => {
     </div>
 </header> */}
 
- 
+
 <div className="bg-gradient-to-r from-white to-blue-200  rounded-lg p-">
-    <div className="flex justify-between items-center py-28 px-5 bg-gradient-to-r from-white to-blue-200 ">
+    <div className="flex justify-between items-center py-6 px-5 bg-gradient-to-r from-white to-blue-200 ">
+    
         <div className="w-1/2">
-            <h2 className="text-6xl font-bold text-gray-800">Budget Buddy:)</h2>
+        <RubberBand>
+        <div>
+        <h2 className="text-6xl font-bold text-gray-800">Budget Buddy:)</h2>
+        </div>
+        </RubberBand>
             <h3 className="text-xl font-semibold text-gray-600 mt-4">Your Pocket Budget Tracker!</h3>
             <p className="text-gray-600 mt-4">&ldquo;Take control of your finances with Budget Buddy, your daily budget tracking PWA, powered by React, Tailwind, Vite, and Firebase.&rdquo;</p>
         </div>
+        <Jello>
         <div className="w-1/2">
             <img src="https://static.vecteezy.com/system/resources/previews/008/851/876/original/cute-dog-3d-illustration-png.png" alt="Imagen relacionada con el programa de fidelización" className="w-full h-auto"> 
             </img>
         </div>
+        </Jello>
     </div>
 </div>
 
 
 
-
-<div className="bg-gradient-to-r from-blue-400 to-gray-400  rounded-lg p-10 ">
+<Slide left>
+<div className="bg-gradient-to-r from-blue-400 to-gray-400  rounded-lg p-6 ">
   <h2 className="text-center text-3xl font-bold text-gray-800">Our Misson</h2>
 <p className="mt-4 text-center text-gray-800">&ldquo;Our mission at Budget Buddy is to empower individuals with the tools they need to achieve financial wellness and success.&rdquo;</p>
 </div>
 
+</Slide>
 
+<Slide left>
 <div className=" bg-gradient-to-r from-blue-400 to-gray-400 p-10 rounded-lg mt-10">
   <h2 className="text-center text-3xl font-bold text-gray-800">Share Budget-Buddy With Others</h2>
   <p className="text-gray-800 mt-2 text-center">&quot;Join the financial revolution. Create your Budget Buddy account today and take the first step towards financial empowerment.&quot;</p>
@@ -77,7 +86,9 @@ const Home = () => {
     <button onClick={shareBudgetBuddy} className="mt-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-lg px-4 py-2 font-semibold">Share</button>
   </div>
 </div>
+</Slide>
 
+<Slide left>
 <div className=" bg-gradient-to-r from-blue-400 to-gray-400 p-10 rounded-lg mt-10">
   <h2 className="text-center text-3xl font-bold text-gray-800">Join Budget-Buddy </h2>
   <p className="text-gray-800 mt-2 text-center">&quot;Sign Up to the  financial revolution. Create your Budget Buddy account today and take the first step towards financial empowerment.&quot;</p>
@@ -85,7 +96,7 @@ const Home = () => {
     <button  className="mt-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-lg px-4 py-2 font-semibold">Sign Up</button>
   </div>
 </div>
-
+</Slide>
 
 {/* 
 <div className="bg-white p-10 mt-10">

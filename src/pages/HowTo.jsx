@@ -9,17 +9,20 @@ const HowTo = () => {
 
             <div className="container mx-auto py-12 px-4  ">
                 
-                <div className="flex justify-center items-center">
-                <h1 className="text-2xl font-bold text-gray-800 mb-6">
-                    HOW TO: BUDGET BUDDY
-                </h1>
-                
-                    </div>
-                    <div className="rounded-xl max-h-96 md:h-screen bg-gradient-to-t from-blue-200 to-white">
-                        <img className="w-screen h-screen object-contain object-top" 
-                        src="https://github.com/krm-aadil/test/blob/main/3d-render-hand-dropping-golden-coins-white_107791-17736-removebg-preview.png?raw=true" alt="">
-                        </img>
-                    </div>
+            <div className="bg-gradient-to-r from-blue-200 to-white  rounded-xl p-">
+            <div className="flex justify-between items-center py-4 px-5 bg-gradient-to-r from-blue-200 to-white rounded-2xl ">
+            <div className="w-1/2">
+            <h2 className="text-6xl font-bold text-gray-800">HOW</h2>
+            <h2 className="text-4xl font-bold text-gray-800">TO USE</h2>
+            {/* <h3 className="text-center text-xl font-semibold text-gray-600 mt-4">Your Pocket Budget Tracker!</h3> */}
+
+             </div>
+             <div className="w-1/2">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/man-thinking-something-5380114-4499712.png" alt="Imagen relacionada con el programa de fidelización" className="w-full h-auto"> 
+            </img>
+             </div>
+            </div>
+            </div>
                 <div className="bg-white p-6 rounded-lg shadow-md">
                         
                     <div className="rounded-2xl bg-gradient-to-b from-blue-100 to-blue-400 p-10 mt-10">
